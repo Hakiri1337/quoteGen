@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
-}
+@import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap);
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: #164a41;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+}
+.container {
+  border: 10px solid #9b9b9b;
+  border-radius: 10%;
+  position: relative;
+  padding: 10 10 0 10;
   color: white;
+  width: 30vw;
+  height: 300px;
+  opacity: 0.9;
+  background-color: #c6c7c6;
+}
+#button {
+  position: absolute;
+  background-color: #7b7e7b;
+  border: 0px;
+  font-family: "Roboto";
+  font-size: 18px;
+  width: 30%;
+  height: 15%;
+  top: 230px;
+  color: white;
+  left: 20px;
+}
+#text {
+  font-family: "Inconsolata";
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  display: block;
+  padding: 10px 5px 0 5px;
+}
+#Author {
+  padding-left: 10px;
+  color: rgb(0, 0, 0);
+  margin-top: 10px;
+  font-family: "Lobster";
+}
+#tweet {
+  position: absolute;
+  color: blue;
+  width: 60px;
+  border-radius: 100%;
+  height: 60px;
+  right: 0;
+  left: 80%;
+  top: 220px;
+  border: 0px;
+}
+#twit-img {
+  width: 40px;
+}
+#button:hover {
+  opacity: 0.5;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1000px) {
+  #twit-img {
+    width: 40px;
   }
-  to {
-    transform: rotate(360deg);
+  .container {
+    min-width: 60vw;
+  }
+  #text {
+    font-size: 0.95rem;
+  }
+  #tweet {
+    left: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    min-width: 80vw;
+    min-height: 400px;
+  }
+  #text {
+    font-size: 1rem;
+  }
+  #button {
+    top: 320px;
+    font-size: inherit;
+  }
+  #tweet {
+    top: 320px;
   }
 }
