@@ -5,45 +5,44 @@ body {
   width: 100vw;
   display: flex;
   justify-content: center;
-  background: #164a41;
+  background: #0f184b;
   align-items: center;
   font-family: "Raleway", sans-serif;
   box-sizing: border-box;
 }
 .container {
-  border: 10px solid #9b9b9b;
-  border-radius: 10%;
+  border: 10px solid #34568b;
   position: relative;
   padding: 10 10 0 10;
   color: white;
   width: 30vw;
   height: 300px;
   opacity: 0.9;
-  background-color: #c6c7c6;
+  background-color: #001f3f;
 }
 #button {
   position: absolute;
-  background-color: #7b7e7b;
+  background-color: #34568b;
   border: 0px;
   font-family: "Roboto";
   font-size: 18px;
   width: 30%;
   height: 15%;
   top: 230px;
-  color: white;
+  color: rgb(255, 255, 255);
   left: 20px;
 }
 #text {
   font-family: "Inconsolata";
   font-size: 1.3rem;
   font-weight: bold;
-  color: rgb(0, 0, 0);
+  color: white;
   display: block;
   padding: 10px 5px 0 5px;
 }
 #Author {
   padding-left: 10px;
-  color: rgb(0, 0, 0);
+  color: white;
   margin-top: 10px;
   font-family: "Lobster";
 }
@@ -59,6 +58,7 @@ body {
   border: 0px;
 }
 #twit-img {
+  margin-top: 5px;
   width: 40px;
 }
 #button:hover {

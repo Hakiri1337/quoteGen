@@ -5,35 +5,41 @@ import './App.css';
 import React, { useEffect,useCallback,useState } from 'react';
 
 function App() {   
-  let value1 = Math.floor(Math.random() * 30); 
+  let value1 = Math.floor(Math.random() * 150); 
   const [quote,setQuote] = useState(""); 
   const [author,setAuthor] = useState(""); 
 
  
-  
 
   const randomQoute = useCallback(() =>{
 
-    fetch('https://goquotes-api.herokuapp.com/api/v1/random?count=50').
+    fetch('https://type.fit/api/quotes', {
+      headers: { 'Content-Type': 'application/json',
+   
+  }}).
     then(response=>response.json()).
     then(data =>{ 
-                 
-                 setAuthor(data.quotes[0].author)
-                  setQuote(data.quotes[0].text)
+      if(data[value1].author===null){setAuthor((prevAuthor)=> prevAuthor="Anonim")}else{
+                 setAuthor(data[value1].author)
+                  setQuote(data[value1].text)}
                 }
         )
         
   },[value1])
 
    useEffect(function effectFunction() {
-    fetch('https://goquotes-api.herokuapp.com/api/v1/random?count=1')
+    fetch('https://type.fit/api/quotes', {  
+      headers: { 'Content-Type': 'application/json',
+   
+  }
+})
         .then(response => response.json())
-        .then(data =>  {setQuote(data.quotes[0].text)
-                       setAuthor(data.quotes[0].author)
+        .then(data =>  {setAuthor(data[value1].author)
+                       setQuote(data[value1].text)
         });
 }, []);
 
-const enableButton = (timer) => {
+const enableButton = () => {
   document.getElementById("button").disabled = false;
   clearInterval();
 }
@@ -59,6 +65,7 @@ const randomColor = useCallback(() =>{
       disableButton()
      randomColor()
      randomQoute()
+
 
   }
  
